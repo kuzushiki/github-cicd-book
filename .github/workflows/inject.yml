@@ -1,4 +1,4 @@
-name: Manual
+name: Inject
 on:
     workflow_dispatch:
         inputs:
