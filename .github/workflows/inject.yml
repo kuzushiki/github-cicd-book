@@ -14,5 +14,5 @@ jobs:
             GREET: ${{ inputs.greeting }} # 中間環境変数
         steps:
             - run: echo ${{ inputs.greeting }} # クオートなし
-            - run: echo "${{ inputs.greeting }}" # クオートあり
-            - run: echo "${GREET}" # 中間環境変数
+            # - run: echo "${{ inputs.greeting }}" # クオートあり。OSコマンドインジェクションできてしまう
+            - run: echo "${GREET}" # 中間環境変数を使うと安全
