@@ -7,3 +7,7 @@ func EvenOrOdd(number int) string {
 		return "odd"
 	}
 }
+
+func Hoge() string {
+	return "hoge"
+}
