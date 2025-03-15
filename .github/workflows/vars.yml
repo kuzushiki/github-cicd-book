@@ -1,0 +1,11 @@
+name: Secrets
+on: push
+jobs:
+    print:
+        runs-on: ubuntu-latest
+        env:
+            USERNAME: ${{ vars.USERNAME }} # Variablesの参照
+            PASSWORD: ${{ secrets.PASSWORD }} # Secretsの参照
+        steps:
+            - run: echo "${USERNAME} ${PASSWORD}" # ログ出力はマスクされる
+            - run: echo "${PASSWORD:0:1} ${PASSWORD#?}" # 完全一致によるチェックのためログ出力はマスクされない
